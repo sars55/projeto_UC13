@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app"
   },
   "repository": {
     "type": "git",
@@ -26,10 +26,7 @@
   },
   "homepage": "https://github.com/sars55/projeto_UC13#readme",
   "dependencies": {
-    "bootstrap": "^5.3.6",
     "express": "^5.1.0",
-    "express-handlebars": "^8.0.3",
-    "mysql2": "^3.14.1",
     "nodemon": "^3.1.10"
   }
 }

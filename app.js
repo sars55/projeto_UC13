@@ -28,9 +28,30 @@ conexao.connect(function(erro){
 
 
 
-app.get('/', (req, res) =>{;
-    res.render('teste');
+app.get('/', (req,res) =>{
+    let sql = 'SELECT * FROM  produtos';
+    conexao.query(sql, function (erro, produtos) {
+        if(erro) {
+            console.error('Erro ao consultar os produtos:', erro);
+            res.status(500).send('Erro ao consultar os produtos');
+            return;
+        }
+        res.render('index', {produtos: produtos});
+    });
 }
 );
+
+app.get('/clientes' , (req, res) =>{
+    let sql = 'SELECT *FROM clientes';
+    conexao.query(sql, function (erro,clientes) {
+        if(erro) {
+            console.error('Erro ao consultar os clientes:', erro);
+            res.status(500).send('Erro ao consultar os clientes');
+            return;
+        }
+        res.render('clientes', {clientes: clientes});
+    })
+})
+
 
 app.listen(8080);
